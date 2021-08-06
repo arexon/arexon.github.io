@@ -1,22 +1,33 @@
 <script>
 	import { page } from '$app/stores'
+	import { onMount } from 'svelte'
+
 	import Icon from './Icon.svelte'
 
-	export let slide = false
 	let nav = () => slide = !slide
+	let loaded = false
+
+	export let slide = false
+
+	onMount(() => {
+		loaded = true
+	})
+
 </script>
 
-<nav class="nav" class:slide>
-	<a class="nav_item" on:click={nav} class:active={$page.path === '/'} href="/">home</a>
-	<a class="nav_item" on:click={nav} class:active={$page.path === '/projects' || $page.path === '/project/furnideco'} href="/projects">projects</a>
-	<a class="nav_item" on:click={nav} class:active={$page.path === '/gallery'} href="/gallery">gallery</a>
-	<a class="nav_item" on:click={nav} class:active={$page.path === '/about'} href="/about">about</a>
-	<div class="nav_links">
-		<a href="https://github.com/arexon" title="GitHub"><Icon type="githubIcon"/></a>
-		<a href="https://twitter.com/thearexon" title="Twitter"><Icon type="twitterIcon"/></a>
-		<a href="https://sketchfab.com/arexon" title="Sketchfab"><Icon type="sketchfabIcon"/></a>
-	</div>
-</nav>
+{#if loaded}
+	<nav class="nav" class:slide>
+		<a class="nav_item" on:click={nav} class:active={$page.path === '/'} href="/">home</a>
+		<a class="nav_item" on:click={nav} class:active={$page.path === '/projects' || $page.path === '/project/furnideco'} href="/projects">projects</a>
+		<a class="nav_item" on:click={nav} class:active={$page.path === '/gallery'} href="/gallery">gallery</a>
+		<a class="nav_item" on:click={nav} class:active={$page.path === '/about'} href="/about">about</a>
+		<div class="nav_links">
+			<a href="https://github.com/arexon" title="GitHub"><Icon type="githubIcon"/></a>
+			<a href="https://twitter.com/thearexon" title="Twitter"><Icon type="twitterIcon"/></a>
+			<a href="https://sketchfab.com/arexon" title="Sketchfab"><Icon type="sketchfabIcon"/></a>
+		</div>
+	</nav>
+{/if}
 
 <style lang="scss">
 	.nav {

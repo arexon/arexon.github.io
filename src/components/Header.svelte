@@ -33,6 +33,8 @@
 		padding-right: $space-2;
 		background: $color-neutral-0;
 		transition: transform .5s $curve-quart;
+		overflow: hidden;
+
 		&.slide {
 			transform: translateX(200px);
 		}
