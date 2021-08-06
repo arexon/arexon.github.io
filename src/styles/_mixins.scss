@@ -1,0 +1,72 @@
+@mixin flex($justify: normal, $align: normal, $direction: row) {
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+}
+
+@mixin box($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+@mixin overlay(
+	$pseudo: false,
+	$top: 0,
+	$right: 0,
+	$bottom: 0,
+	$left: 0
+) {
+	@if $pseudo == true {
+		content: '';
+	}
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+@mixin monotone($color1, $color2) {
+	&::before {
+		@include overlay($overlay: true);
+		@include box(100%);
+		background: $color1;
+		mix-blend-mode: darken;
+	}
+	&::after {
+		@include overlay($overlay: true);
+		@include box(100%);
+		background: $color2;
+		mix-blend-mode: lighten;
+	}
+}
+
+@mixin vector($width, $height: $width) {
+	@include flex(center, center);
+	width: $width;
+	height: $height;
+}
+
+@mixin font($size, $weight, $style: normal) {
+	font-size: $size;
+	font-weight: $weight;
+	font-style: $style;
+}
+
+@mixin noSelection {
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+@mixin desktopScreen() {
+	@media screen and (min-width: 1020px) {
+		@content;
+	}
+}
+
+@mixin tabletScreen() {
+	@media screen and (min-width: 768px) and (max-width: 1019px) {
+		@content;
+	}
+}
