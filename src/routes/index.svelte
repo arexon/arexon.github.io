@@ -7,7 +7,7 @@
 	let location = 'Home | Arexon'
 	let url = 'https://arexon.dev/'
 	let keywords = 'Arexon, Arexon add-ons, Arexon mods, Blockbench'
-	let image = 'https://source.unsplash.com/user/erondu/1600x900'
+	let image = '/assets/thumbnail.png'
 </script>
 
 <Head title={title} description={description} location={location} url={url} keywords={keywords} image={image}/>
