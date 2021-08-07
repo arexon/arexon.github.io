@@ -7,7 +7,7 @@
 </script>
 
 <header class="header" class:slide>
-	<button class="header_navToggle" on:click={toggleNav}>
+	<button class="header_navToggle" on:click={toggleNav} aria-label="Navigation Toggle">
 		<svg class="header_navToggle_icon" class:open={slide} class:slide viewBox="0 0 24 24">
 			<rect x="2" y="6" width="16" height="4"/>
 			<rect x="2" y="14" width="20" height="4"/>

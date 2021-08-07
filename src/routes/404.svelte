@@ -1,6 +1,14 @@
 <script>
+	import Head from '../components/Head.svelte'
 	import Button from '../components/Button.svelte'
+
+	let description = `Whoops! This page doesn't exist`
+	let location = 'Page not Found'
+	let url = 'https://arexon.dev/404'
+	let image = '/assets/thumbnail.png'
 </script>
+
+<Head description={description} location={location} url={url} image={image}/>
 
 <section class="error">
 	<div class="error_main">
