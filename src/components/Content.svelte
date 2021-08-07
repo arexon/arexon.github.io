@@ -24,17 +24,16 @@
 		}
 
 		/* Scrollbar */
-		scrollbar-color: $color-neutral-3 $color-neutral-1;
+		scrollbar-color: $color-neutral-3 $color-neutral-4;
 		scrollbar-width: thin;
-		scrollbar-highlight-color: $color-neutral-5 $color-neutral-1;
 		&::-webkit-scrollbar {
-			@include box($space-0);
-			background: $color-neutral-1;
+			width: $space-1;
+			background: $color-neutral-4;
 		}
 		&::-webkit-scrollbar-thumb {
 			background: $color-neutral-3;
 			&:hover {
-				background: $color-neutral-5;
+				background: $color-neutral-2;
 			}
 		}
 	}
