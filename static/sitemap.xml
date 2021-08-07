@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"> 
+	<url>
+		<loc>https://arexon.dev</loc>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+		<loc>https://arexon.dev/projects</loc>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+		<loc>https://arexon.dev/project/furnideco</loc>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+		<loc>https://arexon.dev/gallery</loc>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+		<loc>https://arexon.dev/about</loc>
+		<changefreq>daily</changefreq>
+	</url>
+</urlset>
