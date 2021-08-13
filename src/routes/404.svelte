@@ -62,8 +62,8 @@
 			}
 
 			&_art {
-                background-size: 80%;
-            }
+				background-size: 80%;
+			}
 		}
 
 		@include desktopScreen {
