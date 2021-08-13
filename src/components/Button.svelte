@@ -10,7 +10,8 @@
 	class:secondary={secondary}
 	href={href}
 	title={title}
-	type="button">
+	type="button"
+>
 	<slot/>
 </a>
 
@@ -33,7 +34,7 @@
 		}
 
 		&.primary {
-			background: $color-primary-0;
+			background: $color-primary-1;
 			color: $color-neutral-0;
 			&:hover {
 				background: $color-primary-2;
