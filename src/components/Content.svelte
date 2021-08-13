@@ -1,7 +1,7 @@
 <script>
 	export let slide = false
 
-	let closeNav = () => {
+	const closeNav = () => {
 		if (slide == true) slide = false
 	}
 </script>
