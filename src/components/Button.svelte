@@ -34,10 +34,10 @@
 		}
 
 		&.primary {
-			background: $color-primary-1;
+			background: $color-primary-2;
 			color: $color-neutral-0;
 			&:hover {
-				background: $color-primary-2;
+				background: $color-primary-3;
 			}
 		}
 
