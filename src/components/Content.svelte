@@ -24,14 +24,14 @@
 		}
 
 		/* Scrollbar */
-		scrollbar-color: $color-neutral-3 $color-neutral-4;
+		scrollbar-color: $color-neutral-1 transparent;
 		scrollbar-width: thin;
 		&::-webkit-scrollbar {
 			width: $space-1;
-			background: $color-neutral-4;
+			background: transparent;
 		}
 		&::-webkit-scrollbar-thumb {
-			background: $color-neutral-3;
+			background: $color-neutral-1;
 			&:hover {
 				background: $color-neutral-2;
 			}
