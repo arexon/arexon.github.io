@@ -5,7 +5,7 @@
 	import Footer from '../../components/Footer.svelte'
 
 	let title = 'Furnideco'
-	let description = 'Adds 48 pieces of functional, decorative and unique furniture that fit with the Minecraft Vanilla aesthetic.'
+	let description = 'Adds 50 pieces of functional, decorative and unique furniture that fit with the Minecraft vanilla style.'
 	let location = 'FurniDeco | Projects | Arexon'
 	let url = 'https://arexon.dev/project/furnideco'
 	let keywords = 'Arexon, Arexon add-ons, Arexon mods, FurniDeco mod, Fabric furniture, Minecraft furniture, Furniture add-ons, FurniDeco add-ons'
@@ -19,7 +19,7 @@
 <article class="wrapper">
 	<Card>
 		<h2>Coming Soon</h2>
-		<p>FurniDeco is under development. There is no set in stone date for when it's coming out yet, but I am hoping for a release sometime in Q3 of this year.</p>
+		<p>FurniDeco is under development. There is no set in stone date for when it's coming out yet, but I am hoping for a release sometime in Q4 of this year.</p>
 	</Card>
 </article>
 
