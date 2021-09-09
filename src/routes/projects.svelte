@@ -21,7 +21,7 @@
 		<a class="projectCard" href={project.link} title="Go to {project.name}">
 			<header class="projectCard_header">{project.name}</header>
 			<div class="projectCard_body">
-				<img class="projectCard_body_thumbnail" src={project.thumbnail} alt="Thumbnail of {project.name}"/>
+				<img src={project.image} alt="Thumbnail of {project.name}"/>
 				<p class="projectCard_body_desc">{project.description}</p>
 			</div>
 		</a>
@@ -82,9 +82,6 @@
 			display: grid;
 			background: $color-neutral-4;
 			overflow: hidden;
-
-			&_thumbnail {
-			}
 
 			&_desc {
 				@include overlay;

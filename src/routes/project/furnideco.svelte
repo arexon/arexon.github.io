@@ -3,18 +3,17 @@
 	import Banner from '../../components/Banner.svelte'
 	import Card from '../../components/Card.svelte'
 	import Footer from '../../components/Footer.svelte'
+	import { projects } from '$lib/projects'
+	let furnideco = projects[0]
 
-	let title = 'Furnideco'
-	let description = 'Adds 50 pieces of functional, decorative and unique furniture that fit with the Minecraft vanilla style.'
 	let location = 'FurniDeco | Projects | Arexon'
 	let url = 'https://arexon.dev/project/furnideco'
 	let keywords = 'Arexon, Arexon add-ons, Arexon mods, FurniDeco mod, Fabric furniture, Minecraft furniture, Furniture add-ons, FurniDeco add-ons'
-	let image = '/assets/thumbnail.png'
 </script>
 
-<Head title={title} description={description} location={location} url={url} keywords={keywords} image={image}/>
+<Head title={furnideco.name} description={furnideco.description} location={location} url={url} keywords={keywords} image={furnideco.image}/>
 
-<Banner title={title} location={location} description={description}/>
+<Banner title={furnideco.name} location={location} description={furnideco.description}/>
 
 <article class="wrapper">
 	<Card>
