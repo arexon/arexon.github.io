@@ -40,7 +40,7 @@
 			<li>🎨 Fully customizable</li>
 			<li>🎮 Interactive and functional</li>
 			<li>🍦 Fits with the Minecraft Vanilla feel</li>
-			<li>🪓 Craftable in survival mode</li>
+			<li>🪓 Craft-able in survival mode</li>
 			<li>🧊 Uses blocks</li>
 		</ul>
 
@@ -53,7 +53,7 @@
 		<Divider/>
 
 		<h2>Furniture Grades</h2>
-		<p>To keep different kinds of furniture organized, FurniDeco divids them into <strong>Furniture Grades</strong>, each grade houeses furniture of a single theme. Currently the add-on has only one grade, but eventaully it'll expand into multiple grades in future updates.</p>
+		<p>To keep different kinds of furniture organized, FurniDeco divides them into <strong>Furniture Grades</strong>, each grade houses furniture of a single theme. Currently the add-on has only one grade, but eventually it'll expand into multiple grades in future updates.</p>
 
 		<Divider/>
 
@@ -64,7 +64,7 @@
 		<Divider/>
 
 		<h2>Interactivity and Functionality</h2>
-		<p>One of the major goals FurniDeco aims to achieve is creating furniture that's not only decorative, but is also usefull!</p>
+		<p>One of the major goals FurniDeco aims to achieve is creating furniture that's not only decorative, but is also useful!</p>
 		<img class="space" src="/pages/furnideco/interactivity.gif" alt="Interactivity">
 
 		<Divider/>
