@@ -96,6 +96,13 @@
 
 		<Divider full/>
 
+		<article class="recipes">
+			<div>
+				<h4>{furnideco.recipes.carpentry_table.name}</h4>
+				<img class="recipe_image" src={furnideco.recipes.carpentry_table.image} alt={furnideco.recipes.carpentry_table.name}/>
+			</div>
+		</article>
+
 		<h3>➔ Rustic Grade</h3>
 		<article class="recipes">
 			{#each furnideco.recipes.rustic_grade as recipe}

@@ -5,6 +5,10 @@ const projects = [
 		image: '/pages/furnideco/thumbnail.png',
 		link: '/project/furnideco',
 		recipes: {
+			carpentry_table: {
+				name: 'Carpentry Table',
+				image: '/pages/furnideco/recipes/carpentry_table.png'
+			},
 			rustic_grade: [
 				{
 					name: 'Book',
