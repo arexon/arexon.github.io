@@ -139,7 +139,7 @@
 
 		<Button primary href="https://github.com/Arexon/furnideco/releases/download/v1.0.0/furnideco-v1.0.0.mcaddon" title="Download the latest version">Download ➔</Button>
 		<Divider/>
-		<Button secondary href="https://github.com/Arexon/furnideco/releases" title="View all FurniDeco releases on GitHub">View all version on GitHub ➔</Button>
+		<Button secondary href="https://github.com/Arexon/furnideco/releases" title="View all FurniDeco releases on GitHub">View all versions on GitHub ➔</Button>
 
 	{/if}
 </article>
