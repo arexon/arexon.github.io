@@ -103,9 +103,23 @@
 			</div>
 		</article>
 
+		<Divider/>
+
+		<h3>➔ Tools</h3>
+		<article class="recipes">
+			{#each furnideco.recipes.tools as recipe}
+				<div>
+					<h4>{recipe.name}</h4>
+					<img class="recipe_image" src={recipe.image} alt={recipe.name}/>
+				</div>
+			{/each}
+		</article>
+
+		<Divider/>
+
 		<h3>➔ Rustic Grade</h3>
 		<article class="recipes">
-			{#each furnideco.recipes.rustic_grade as recipe}
+			{#each furnideco.recipes.rustic as recipe}
 				<div>
 					<h4>{recipe.name}</h4>
 					<img class="recipe_image" src={recipe.image} alt={recipe.name}/>
