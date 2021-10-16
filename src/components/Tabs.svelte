@@ -7,8 +7,8 @@
 </script>
 
 <div class="tabs">
-	{#each tabs as tab}
-		<a class="tabs_item" class:active={$url.hash === `#${toSnakeCase(tab)}`} href={`#${toSnakeCase(tab)}`}>{tab}</a>
+	{#each tabs as tab, i}
+		<a class="tabs_item" class:active={$url.hash === `#${toSnakeCase(tab)}` || i === 0 && $url.hash === ''} href={`#${toSnakeCase(tab)}`}>{tab}</a>
 	{/each}
 </div>
 
