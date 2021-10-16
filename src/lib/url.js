@@ -4,7 +4,9 @@ const isBrowser = typeof window !== 'undefined'
 
 const href = writable(isBrowser ? window.location.href : 'https://arexon.dev')
 
-const URL = isBrowser ? window.URL : require('url').URL
+import utilUrl from 'url'
+
+const URL = isBrowser ? window.URL : utilUrl.URL
 
 if (isBrowser) {
   const originalPushState = history.pushState
