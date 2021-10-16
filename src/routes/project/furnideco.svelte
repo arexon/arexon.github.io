@@ -85,6 +85,11 @@
 		<h2>License</h2>
 		<Card>FurniDeco is licensed under the Apache License 2.0, you can read more about it <a href="https://github.com/Arexon/furnideco/blob/main/LICENSE">here</a></Card>
 
+		<Divider/>
+
+		<h2>Made With Bridge.</h2>
+		<Card>FurniDeco was made with <a href="https://bridge-core.app/">bridge.</a> an advanced IDE for creating Minecraft Add-ons.</Card>
+
 	{:else if $getUrl.hash === '#recipes'}
 
 		<h2>Crafting Recipes</h2>
