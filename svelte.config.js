@@ -1,3 +1,4 @@
+import path from 'path'
 import adapter from '@sveltejs/adapter-static'
 import preprocess from 'svelte-preprocess'
 
@@ -9,7 +10,15 @@ const config = {
 	}),
 	kit: {
 		adapter: adapter(),
-		target: '#svelte'
+		target: '#svelte',
+		vite: {
+			resolve: {
+				alias: {
+					'$components': path.resolve('./src/components'),
+					'$lib': path.resolve('./src/lib')
+				}
+			}
+		}
 	}
 }
 
