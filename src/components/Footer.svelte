@@ -8,10 +8,10 @@
 		display: grid;
 		place-items: center;
 		margin-top: auto;
-		background: $color-neutral-4;
+		background: $color-neutral-1;
 
 		&_copyright {
-			color: $color-neutral-1;
+			color: $color-neutral-5;
 		}
 	}
 </style>

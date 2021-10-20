@@ -17,24 +17,16 @@
 		gap: $space-4;
 		overflow-y: scroll;
 		background: $color-neutral-0;
-		transition: transform .5s $curve-quart, opacity .5s $curve-circ;
+		transition: transform .5s $curve-quart, filter .5s $curve-circ;
 		&.slide {
-			opacity: .25;
+			filter: brightness(0.2);
 			transform: translateX(200px);
 		}
 
 		/* Scrollbar */
-		scrollbar-color: $color-neutral-1 transparent;
-		scrollbar-width: thin;
+    	scrollbar-width: none;
 		&::-webkit-scrollbar {
-			width: $space-1;
-			background: transparent;
-		}
-		&::-webkit-scrollbar-thumb {
-			background: $color-neutral-1;
-			&:hover {
-				background: $color-neutral-2;
-			}
+			display: none;
 		}
 	}
 </style>

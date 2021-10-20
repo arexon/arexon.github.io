@@ -48,7 +48,7 @@
 					transition: transform .5s $curve-quart;
 				}
 				&:hover {
-					fill: $color-primary-2;
+					fill: $color-primary-0;
 				}
 				&.slide {
 					transform: rotate(90deg);
@@ -70,7 +70,7 @@
 			text-transform: uppercase;
 			text-decoration: none !important;
 			&:hover {
-				fill: $color-primary-2;
+				fill: $color-primary-0;
 			}
 
 			&_h {

@@ -19,7 +19,9 @@
 	[type='button'] {
 		@include font($size-1, 500);
 		@include noSelection;
+		display: inline-block;
 		padding: $space-1 $space-3;
+		border-radius: $radius-1;
 		background: transparent;
 		font-family: $font-secondary;
 		text-transform: uppercase;
@@ -34,10 +36,10 @@
 		}
 
 		&.primary {
-			background: $color-primary-2;
+			background: $color-primary-0;
 			color: $color-neutral-0;
 			&:hover {
-				background: $color-primary-3;
+				background: $color-primary-1;
 			}
 		}
 

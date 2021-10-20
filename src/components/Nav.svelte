@@ -63,14 +63,12 @@
 			text-decoration: none !important;
 			opacity: 0;
 			&:hover {
-				color: $color-primary-2;
+				color: $color-primary-0 !important;
 			}
 			&.active {
-				background: $color-neutral-4;
-				color: $color-neutral-1;
-				&:hover {
-					background: $color-primary-2;
-				}
+				padding-left: $space-1;
+				border-left: $space-0 solid;
+				color: $color-neutral-4;
 			}
 		}
 
