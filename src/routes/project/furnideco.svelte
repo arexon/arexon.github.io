@@ -1,11 +1,11 @@
 <script>
-	import Head from '../../components/Head.svelte'
-	import Banner from '../../components/Banner.svelte'
-	import Tabs from '../../components/Tabs.svelte'
-	import Card from '../../components/Card.svelte'
-	import Button from '../../components/Button.svelte'
-	import Divider from '../../components/Divider.svelte'
-	import Footer from '../../components/Footer.svelte'
+	import Head from '$components/Head.svelte'
+	import Banner from '$components/Banner.svelte'
+	import Tabs from '$components/Tabs.svelte'
+	import Card from '$components/Card.svelte'
+	import Button from '$components/Button.svelte'
+	import Divider from '$components/Divider.svelte'
+	import Footer from '$components/Footer.svelte'
 	import { projects } from '$lib/projects'
 	import { url as getUrl } from '$lib/url'
 	let furnideco = projects[0]
@@ -122,7 +122,7 @@
 			{#each furnideco.recipes.rustic as recipe}
 				<div>
 					<h4>{recipe.name}</h4>
-					<img class="recipe_image" src={recipe.image} alt={recipe.name}/>
+					<img src={recipe.image} alt={recipe.name}/>
 				</div>
 			{/each}
 		</article>
@@ -156,9 +156,5 @@
 		@include tabletScreen {
 			margin: 0 $space-2;
 		}
-	}
-
-	.recipe_image {
-		background: $color-neutral-5;
 	}
 </style>

@@ -1,8 +1,8 @@
 <script>
-	import Head from '../components/Head.svelte'
-	import Banner from '../components/Banner.svelte'
-	import Card from '../components/Card.svelte'
-	import Footer from '../components/Footer.svelte'
+	import Head from '$components/Head.svelte'
+	import Banner from '$components/Banner.svelte'
+	import Card from '$components/Card.svelte'
+	import Footer from '$components/Footer.svelte'
 
 	let title = 'About Me'
 	let description = 'Know more about me and what I do'

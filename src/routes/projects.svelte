@@ -1,7 +1,8 @@
 <script>
-	import Head from '../components/Head.svelte'
-	import Banner from '../components/Banner.svelte'
-	import Footer from '../components/Footer.svelte'
+	import Transition from '$components/Transition.svelte'
+	import Head from '$components/Head.svelte'
+	import Banner from '$components/Banner.svelte'
+	import Footer from '$components/Footer.svelte'
 	import { projects } from '$lib/projects'
 
 	let title = 'Projects'
@@ -10,23 +11,27 @@
 	let url = 'https://arexon.dev/projects'
 	let keywords = 'Arexon, Arexon add-ons, Arexon mods, FurniDeco'
 	let image = '/assets/thumbnail.png'
+
+	let isInView
 </script>
 
 <Head title={title} description={description} location={location} url={url} keywords={keywords} image={image}/>
 
 <Banner title={title} description={description} location={location}/>
 
-<article class="projects">
-	{#each projects as project}
-		<a class="projectCard" href={project.link} title="Go to {project.name}">
-			<header class="projectCard_header">{project.name}</header>
-			<div class="projectCard_body">
-				<img src={project.image} alt="Thumbnail of {project.name}"/>
-				<p class="projectCard_body_desc">{project.description}</p>
-			</div>
-		</a>
-	{/each}
-</article>
+<Transition bind:isInView>
+	<article class="projects transition" class:animate={isInView}>
+		{#each projects as project}
+			<a class="projectCard" href={project.link} title="Go to {project.name}">
+				<header class="projectCard_header">{project.name}</header>
+				<div class="projectCard_body">
+					<img src={project.image} alt="Thumbnail of {project.name}"/>
+					<p class="projectCard_body_desc">{project.description}</p>
+				</div>
+			</a>
+		{/each}
+	</article>
+</Transition>
 
 <Footer/>
 
@@ -67,7 +72,8 @@
 			@include flex(flex-end, flex-start, column);
 			@include font($size-5, 800);
 			grid-area: 2 / 2 / 4 / 4;
-			padding: $space-0 $space-1;
+			padding: $space-1 $space-1;
+			border-radius: $radius-1;
 			background: $color-neutral-1;
 			color: $color-neutral-4;
 			font-family: $font-secondary;
@@ -80,6 +86,7 @@
 			position: relative;
 			grid-area: 1 / 1 / 3 / 3;
 			display: grid;
+			border-radius: 0 !important;
 			background: $color-neutral-4;
 			overflow: hidden;
 
@@ -88,8 +95,8 @@
 				@include flex(flex-end, center, column);
 				position: absolute;
 				padding: $space-1;
-				backdrop-filter: brightness(.5);
-				color: $color-neutral-1;
+				backdrop-filter: brightness(.64);
+				color: $color-neutral-5;
 				text-align: center;
 				opacity: 0;
 				transform: scale(1.2);
@@ -102,5 +109,13 @@
 				}
 			}
 		}
+	}
+
+	.transition {
+		opacity: 0;
+		transition: opacity 2s $curve-quart;
+	}
+	.transition.animate {
+		opacity: 1;
 	}
 </style>

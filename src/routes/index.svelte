@@ -1,6 +1,7 @@
 <script>
-	import Head from '../components/Head.svelte'
-	import Button from '../components/Button.svelte'
+	import Transition from '$components/Transition.svelte'
+	import Head from '$components/Head.svelte'
+	import Button from '$components/Button.svelte'
 
 	let title = 'Arexon'
 	let description = 'Lowpoly 3D Artist, Pixel Artist, and Developer creating Minecraft content.'
@@ -8,24 +9,28 @@
 	let url = 'https://arexon.dev/'
 	let keywords = 'Arexon, Arexon add-ons, Arexon mods, Blockbench'
 	let image = '/assets/thumbnail.png'
+
+	let isInView
 </script>
 
 <Head title={title} description={description} location={location} url={url} keywords={keywords} image={image}/>
 
-<section class="hero">
-	<div class="hero_main">
-		<h1 class="hero_main_header">
-			Developer,<br/>
-			3D Artist,<br/>
-			and Pixel Artist
-		</h1>
-		<div class="hero_main_buttons">
-			<Button primary href="/projects" title="Go to Projects">Check Projects</Button>
-			<Button secondary href="/gallery" title="Go to Gallery">View Gallery</Button>
+<Transition bind:isInView>
+	<section class="hero">
+		<div class="hero_main transition" class:animate={isInView}>
+			<h1 class="hero_main_header">
+				<div>Developer,</div>
+				<div>3D Artist,</div>
+				<div>and Pixel Artist</div>
+			</h1>
+			<div class="hero_main_buttons">
+				<Button primary href="/projects" title="Go to Projects">Explore Projects</Button>
+				<Button secondary href="/gallery" title="Go to Gallery">View Gallery</Button>
+			</div>
 		</div>
-	</div>
-	<div class="hero_art"></div>
-</section>
+		<div class="hero_art transitionR" class:animate={isInView}></div>
+	</section>
+</Transition>
 
 <style lang="scss">
 	.hero {
@@ -38,7 +43,7 @@
 			display: grid;
 			place-content: center;
 			place-items: center;
-			gap: $space-2;
+			gap: $space-3;
 			padding: 0 $space-3 $space-3 $space-3;
 			background:
 				url('/assets/foregrounds/clouds-1.svg') 5% 95% / 50% no-repeat,
@@ -49,6 +54,13 @@
 				position: relative;
 				background: url('/assets/foregrounds/dots-big.svg');
 				color: $color-neutral-4;
+
+				@each $color in $rainbow {
+					$i: index($rainbow, $color);
+					div:nth-child(#{$i}) {
+						color: $color;
+					}
+				}
 			}
 
 			&_buttons {
@@ -90,5 +102,19 @@
 				display: block;
 			}
 		}
+	}
+
+	.transition {
+		opacity: 0;
+		transform: translateY(50px);
+		transition: transform 1s $curve-quart, opacity 1.5s $curve-quart;
+	}
+	.transitionR {
+		@extend .transition;
+		transform: translateY(-50px);
+	}
+	.transition.animate, .transitionR.animate {
+		opacity: 1;
+		transform: translateY(0);
 	}
 </style>

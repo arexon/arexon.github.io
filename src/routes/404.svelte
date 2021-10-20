@@ -1,24 +1,29 @@
 <script>
-	import Head from '../components/Head.svelte'
-	import Button from '../components/Button.svelte'
+	import Transition from '$components/Transition.svelte'
+	import Head from '$components/Head.svelte'
+	import Button from '$components/Button.svelte'
 
 	let description = `Whoops! This page doesn't exist`
 	let location = 'Page not Found'
 	let url = 'https://arexon.dev/404'
 	let image = '/assets/thumbnail.png'
+
+	let isInView
 </script>
 
 <Head description={description} location={location} url={url} image={image}/>
 
-<section class="error">
-	<div class="error_main">
-		<span class="overline">Error: 404</span>
-		<h1 class="error_main_header">Whoops!</h1>
-		<h3 class="error_main_subtitle">Looks like you're lost.</h3>
-		<Button secondary href="/" title="Go to Home">Take me Home</Button>
-	</div>
-	<div class="error_art"></div>
-</section>
+<Transition bind:isInView>
+	<section class="error">
+		<div class="error_main transitionR" class:animate={isInView}>
+			<span class="overline">Error: 404</span>
+			<h1 class="error_main_header">Whoops!</h1>
+			<h3 class="error_main_subtitle">Looks like you're lost.</h3>
+			<Button secondary href="/" title="Go to Home">Take me Home</Button>
+		</div>
+		<div class="error_art transition" class:animate={isInView}></div>
+	</section>
+</Transition>
 
 <style lang="scss">
 	.error {
@@ -83,5 +88,19 @@
 				background-size: 80%;
 			}
 		}
+	}
+
+	.transition {
+		opacity: 0;
+		transform: translateY(50px);
+		transition: transform 1s $curve-quart, opacity 1.5s $curve-quart;
+	}
+	.transitionR {
+		@extend .transition;
+		transform: translateY(-50px);
+	}
+	.transition.animate, .transitionR.animate {
+		opacity: 1;
+		transform: translateY(0);
 	}
 </style>

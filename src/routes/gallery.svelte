@@ -1,7 +1,8 @@
 <script>
-	import Head from '../components/Head.svelte'
-	import Banner from '../components/Banner.svelte'
-	import Footer from '../components/Footer.svelte'
+	import Transition from '$components/Transition.svelte'
+	import Head from '$components/Head.svelte'
+	import Banner from '$components/Banner.svelte'
+	import Footer from '$components/Footer.svelte'
 	import { gallery } from '$lib/gallery'
 
 	let title = 'Gallery'
@@ -10,17 +11,21 @@
 	let url = 'https://arexon.dev/gallery'
 	let keywords = 'Arexon, Blockbench'
 	let image = '/assets/thumbnail.png'
+
+	let isInView
 </script>
 
 <Head description={description} location={location} url={url} keywords={keywords} image={image}/>
 
 <Banner title={title} description={description} location={location}/>
 
-<article class="gallery">
-	{#each gallery as image}
-		<img src={image.url} alt={image.name}/>
-	{/each}
-</article>
+<Transition bind:isInView>
+	<article class="gallery transition" class:animate={isInView}>
+		{#each gallery as image}
+			<img src={image.url} alt={image.name}/>
+		{/each}
+	</article>
+</Transition>
 
 <Footer/>
 
@@ -31,12 +36,23 @@
 		grid-auto-rows: auto;
 		align-content: start;
 		gap: $space-1;
+		padding: 0 $space-1;
 		@include tabletScreen {
+			padding: 0;
 			margin: 0 $space-2;
 		}
 		@include desktopScreen {
 			grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+			padding: 0;
 			margin: 0 $space-4;
 		}
+	}
+
+	.transition {
+		opacity: 0;
+		transition: opacity 2s $curve-quart;
+	}
+	.transition.animate {
+		opacity: 1;
 	}
 </style>
