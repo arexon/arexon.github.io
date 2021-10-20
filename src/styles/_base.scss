@@ -20,10 +20,10 @@ body, html, #svelte, .content {
 
 img {
 	@include box(100%, auto);
-	background: $color-neutral-1;
+	border-radius: $radius-0;
 
 	&.space {
-		margin: $space-2 0;
+		margin: $space-1 0;
 	}
 }
 
