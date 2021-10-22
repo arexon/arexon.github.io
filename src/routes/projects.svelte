@@ -24,7 +24,7 @@
 		{#each projects as project}
 			<a class="projectCard" href={project.link} title="Go to {project.name}">
 				<header class="projectCard_header">{project.name}</header>
-				<img class="projectCard_image" src={project.image} alt="Thumbnail of {project.name}"/>
+				<img class="projectCard_icon" src={project.icon} alt="Thumbnail of {project.name}"/>
 			</a>
 		{/each}
 	</article>
@@ -73,7 +73,7 @@
 			line-height: 1;
 		}
 
-		&_image {
+		&_icon {
 			position: relative;
 			grid-area: 1 / 1 / 3 / 3;
 			display: grid;
