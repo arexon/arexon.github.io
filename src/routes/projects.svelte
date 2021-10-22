@@ -24,10 +24,7 @@
 		{#each projects as project}
 			<a class="projectCard" href={project.link} title="Go to {project.name}">
 				<header class="projectCard_header">{project.name}</header>
-				<div class="projectCard_body">
-					<img src={project.image} alt="Thumbnail of {project.name}"/>
-					<p class="projectCard_body_desc">{project.description}</p>
-				</div>
+				<img class="projectCard_image" src={project.image} alt="Thumbnail of {project.name}"/>
 			</a>
 		{/each}
 	</article>
@@ -39,16 +36,16 @@
 	.projects {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
 		grid-auto-rows: auto;
 		align-content: start;
 		gap: $space-2;
 		margin: 0 $space-1;
+
 		@include tabletScreen {
-			grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 			margin: 0 $space-2;
 		}
 		@include desktopScreen {
-			grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
 			gap: $space-3;
 			margin: 0 $space-4;
 		}
@@ -58,56 +55,30 @@
 		display: grid;
 		grid-template: 48px auto 48px / 48px auto 48px;
 		text-decoration: none !important;
+		transition: transform .25s $curve-circ;
 		&:hover, &:focus {
-			.projectCard_header {
-				background: $color-neutral-2;
-			}
-			.projectCard_body_desc {
-				opacity: 1;
-				transform: scale(1);
-			}
+			transform: translateY(-$space-1);
 		}
 
 		&_header {
 			@include flex(flex-end, flex-start, column);
 			@include font($size-5, 800);
 			grid-area: 2 / 2 / 4 / 4;
-			padding: $space-1 $space-1;
+			padding: $space-0 $space-1;
 			border-radius: $radius-1;
 			background: $color-neutral-1;
 			color: $color-neutral-4;
 			font-family: $font-secondary;
 			letter-spacing: 1px;
 			line-height: 1;
-			transition: all .5s $curve-circ;
 		}
 
-		&_body {
+		&_image {
 			position: relative;
 			grid-area: 1 / 1 / 3 / 3;
 			display: grid;
-			border-radius: 0 !important;
-			background: $color-neutral-4;
+			border-radius: $radius-0;
 			overflow: hidden;
-
-			&_desc {
-				@include overlay;
-				@include flex(flex-end, center, column);
-				position: absolute;
-				padding: $space-1;
-				backdrop-filter: brightness(.64);
-				color: $color-neutral-5;
-				text-align: center;
-				opacity: 0;
-				transform: scale(1.2);
-				transition: all .5s $curve-circ;
-				@include tabletScreen {
-					padding: $space-2 $space-3;
-				}
-				@include desktopScreen {
-					padding: $space-3;
-				}
-			}
 		}
 	}
 
