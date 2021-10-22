@@ -19,7 +19,7 @@
 			<span class="overline">Error: 404</span>
 			<h1 class="error_main_header">Whoops!</h1>
 			<h3 class="error_main_subtitle">Looks like you're lost.</h3>
-			<Button secondary href="/" title="Go to Home">Take me Home</Button>
+			<Button primary href="/" title="Go to Home">Take me Home</Button>
 		</div>
 		<div class="error_art transition" class:animate={isInView}></div>
 	</section>
