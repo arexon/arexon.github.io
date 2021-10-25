@@ -22,11 +22,5 @@
 			filter: brightness(0.2);
 			transform: translateX(200px);
 		}
-
-		/* Scrollbar */
-    	scrollbar-width: none;
-		&::-webkit-scrollbar {
-			display: none;
-		}
 	}
 </style>

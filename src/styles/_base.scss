@@ -4,6 +4,11 @@
 	border: 0;
 	outline: 0;
 	box-sizing: border-box;
+
+	scrollbar-width: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
 }
 
 body, html, #svelte, .content {
@@ -24,6 +29,13 @@ img {
 
 	&.space {
 		margin: $space-1 0;
+	}
+
+	&.lightbox {
+		position: fixed;
+		background-color: red;
+		top: 0;
+		filter: brightness(0.4);
 	}
 }
 
