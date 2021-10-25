@@ -1,4 +1,5 @@
 <script>
+	import Lightbox from '$components/Lightbox.svelte'
 	import Transition from '$components/Transition.svelte'
 	import Head from '$components/Head.svelte'
 	import Banner from '$components/Banner.svelte'
@@ -13,6 +14,9 @@
 	let image = '/assets/thumbnail.png'
 
 	let isInView
+
+	let lightbox = {}
+	let lightboxVisibility
 </script>
 
 <Head description={description} location={location} url={url} keywords={keywords} image={image}/>
@@ -22,10 +26,11 @@
 <Transition bind:isInView>
 	<article class="gallery transition" class:animate={isInView}>
 		{#each gallery as image}
-			<img src={image.url} alt={image.name}/>
+			<img on:click={() => {lightbox = image; lightboxVisibility = true}} src={image.url} alt={image.name}/>
 		{/each}
 	</article>
 </Transition>
+<Lightbox src={lightbox.url} alt={lightbox.name} bind:visibility={lightboxVisibility}/>
 
 <Footer/>
 
