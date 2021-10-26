@@ -9,26 +9,26 @@ import utilUrl from 'url'
 const URL = isBrowser ? window.URL : utilUrl.URL
 
 if (isBrowser) {
-  const originalPushState = history.pushState
-  const originalReplaceState = history.replaceState
+	const originalPushState = history.pushState
+	const originalReplaceState = history.replaceState
 
-  const updateHref = () => href.set(window.location.href)
+	const updateHref = () => href.set(window.location.href)
 
-  history.pushState = function() {
-    originalPushState.apply(this, arguments)
-    updateHref()
-  }
+	history.pushState = function () {
+		originalPushState.apply(this, arguments)
+		updateHref()
+	}
 
-  history.replaceState = function() {
-    originalReplaceState.apply(this, arguments)
-    updateHref()
-  }
+	history.replaceState = function () {
+		originalReplaceState.apply(this, arguments)
+		updateHref()
+	}
 
-  window.addEventListener('popstate', updateHref)
-  window.addEventListener('hashchange', updateHref)
+	window.addEventListener('popstate', updateHref)
+	window.addEventListener('hashchange', updateHref)
 }
 
 export const url = {
-  subscribe: derived(href, $href => new URL($href)).subscribe,
-  ssrSet: (urlHref) => href.set(urlHref),
+	subscribe: derived(href, $href => new URL($href)).subscribe,
+	ssrSet: (urlHref) => href.set(urlHref),
 }
