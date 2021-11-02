@@ -1,5 +1,5 @@
 <script>
-	import Transition from '../components/Transition.svelte'
+	import Transition from '$components/Transition.svelte'
 
 	export let title = ''
 	export let location = ''
