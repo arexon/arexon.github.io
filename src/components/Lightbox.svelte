@@ -27,9 +27,9 @@
 		place-items: center;
 		padding: 0 $space-1;
 		background: #160d0eee;
-		transition: transform .6s $curve-quart, opacity .4s $curve-quart;
+		transition: opacity .4s $curve-quart, visibility .4s;
 		opacity: 0;
-		transform: translateY(100%) scale(.75);
+		visibility: hidden;
 
 		&_image {
 			border-radius: $radius-1;
@@ -37,7 +37,7 @@
 
 		&.show {
 			opacity: 1;
-			transform: translateY(0) scale(1);
+			visibility: visible;
 		}
 
 		@include tabletScreen {
