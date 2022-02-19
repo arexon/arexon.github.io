@@ -133,13 +133,34 @@
 
 		<Divider full/>
 
-		<Card>Download the latest release of FurniDeco or view all versions.</Card>
+		<Card>
+			Download the latest release of FurniDeco or
+			<a
+				href="https://github.com/Arexon/furnideco/releases"
+				title="View all FurniDeco releases on GitHub"
+				rel="noreferrer noopener"
+			>
+				view all versions.
+			</a>
+		</Card>
 
 		<Divider/>
 
-		<Button primary href="https://github.com/Arexon/furnideco/releases/latest/download/furnideco.mcaddon" title="Download the latest version">Download ➔</Button>
+		<Button
+			secondary
+			href="https://github.com/Arexon/furnideco/releases/latest/download/geometry-fix.mcaddon"
+			title="Download the Geometry Fix (required)"
+		>
+			Download Geometry Fix (required)
+		</Button>
 		<Divider/>
-		<Button secondary href="https://github.com/Arexon/furnideco/releases" title="View all FurniDeco releases on GitHub">View all versions on GitHub ➔</Button>
+		<Button
+			primary
+			href="https://github.com/Arexon/furnideco/releases/latest/download/furnideco.mcaddon"
+			title="Download the latest version"
+		>
+			Download FurniDeco
+		</Button>
 
 	{/if}
 </article>
