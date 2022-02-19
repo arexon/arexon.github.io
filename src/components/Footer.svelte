@@ -1,5 +1,5 @@
 <footer class="footer">
-	<span class="footer_copyright overline">© 2021 Arexon</span>
+	<span class="footer_copyright overline">© 2022 Arexon</span>
 </footer>
 
 <style lang="scss">
