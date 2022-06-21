@@ -5,14 +5,8 @@
 	export let title = ''
 </script>
 
-<a
-	class:primary={primary}
-	class:secondary={secondary}
-	href={href}
-	title={title}
-	type="button"
->
-	<slot/>
+<a class:primary class:secondary {href} {title} type="button">
+	<slot />
 </a>
 
 <style lang="scss">
@@ -27,12 +21,11 @@
 		text-transform: uppercase;
 		text-decoration: none !important;
 		line-height: 1;
-		transition: transform .1s $curve-circ,
-					background-color .2s $curve-quart,
-					color .2s $curve-quart,
-					box-shadow .2s $curve-quart;
+		transition: transform 0.1s $curve-circ,
+			background-color 0.2s $curve-quart, color 0.2s $curve-quart,
+			box-shadow 0.2s $curve-quart;
 		&:focus {
-			transform: scale(.92);
+			transform: scale(0.92);
 		}
 
 		&.primary {

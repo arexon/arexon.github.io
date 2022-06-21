@@ -3,24 +3,40 @@
 
 	export let slide = false
 
-	const toggleNav = () => slide = !slide
+	const toggleNav = () => (slide = !slide)
 </script>
 
 <header class="header" class:slide>
-	<button class="header_navToggle" on:click={toggleNav} aria-label="Navigation Toggle">
-		<svg class="header_navToggle_icon" class:open={slide} class:slide viewBox="0 0 24 24">
-			<rect x="2" y="6" width="16" height="4"/>
-			<rect x="2" y="14" width="20" height="4"/>
-		<svg/>
-	</button>
+	<button
+		class="header_navToggle"
+		on:click={toggleNav}
+		aria-label="Navigation Toggle"
+	>
+		<svg
+			class="header_navToggle_icon"
+			class:open={slide}
+			class:slide
+			viewBox="0 0 24 24"
+		>
+			<rect x="2" y="6" width="16" height="4" />
+			<rect x="2" y="14" width="20" height="4" />
+			<svg />
+		</svg></button
+	>
 	<a class="header_logo" href="/" title="arexon.dev">
-		<svg class="header_logo_h"><use href="#logoH"/></svg>
-		<svg class="header_logo_v"><use href="#logoV"/></svg>
+		<svg class="header_logo_h"><use href="#logoH" /></svg>
+		<svg class="header_logo_v"><use href="#logoV" /></svg>
 	</a>
 	<div class="header_links">
-		<a href="https://github.com/arexon" title="GitHub"><Icon type="githubIcon"/></a>
-		<a href="https://twitter.com/thearexon" title="Twitter"><Icon type="twitterIcon"/></a>
-		<a href="https://sketchfab.com/arexon" title="Sketchfab"><Icon type="sketchfabIcon"/></a>
+		<a href="https://github.com/arexon" title="GitHub"
+			><Icon type="githubIcon" /></a
+		>
+		<a href="https://twitter.com/thearexon" title="Twitter"
+			><Icon type="twitterIcon" /></a
+		>
+		<a href="https://sketchfab.com/arexon" title="Sketchfab"
+			><Icon type="sketchfabIcon" /></a
+		>
 	</div>
 </header>
 
@@ -32,7 +48,7 @@
 		align-items: center;
 		padding-right: $space-2;
 		background: $color-neutral-0;
-		transition: transform .5s $curve-quart;
+		transition: transform 0.5s $curve-quart;
 		overflow: hidden;
 		&.slide {
 			transform: translateX(200px);
@@ -43,9 +59,9 @@
 			&_icon {
 				@include vector(48px);
 				fill: $color-neutral-4;
-				transition: transform .5s $curve-quart;
+				transition: transform 0.5s $curve-quart;
 				rect {
-					transition: transform .5s $curve-quart;
+					transition: transform 0.5s $curve-quart;
 				}
 				&:hover {
 					fill: $color-primary-0;

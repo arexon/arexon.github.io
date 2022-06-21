@@ -11,14 +11,21 @@
 	let image = '/assets/thumbnail.png'
 </script>
 
-<Head location={location} description={description} url={url} image={image}/>
+<Head {location} {description} {url} {image} />
 
-<Banner title={title} description={description} location={location}/>
+<Banner {title} {description} {location} />
 
 <article class="wrapper">
 	<Card>
-		<p>Heyo! I'm Arexon, a Developer that creates tons of bugs when programming and also makes pixely 3D/2D art sometimes. I'm also a Gameplay Developer at <a href="https://www.gamemodeone.com/" title="Go to Gamemode One website">Gamemode One</a>.</p>
+		<p>
+			Heyo! I'm Arexon, a Developer that creates tons of bugs when
+			programming and also makes pixely 3D/2D art sometimes. I'm also a
+			Gameplay Developer at <a
+				href="https://www.gamemodeone.com/"
+				title="Go to Gamemode One website">Gamemode One</a
+			>.
+		</p>
 	</Card>
 </article>
 
-<Footer/>
+<Footer />

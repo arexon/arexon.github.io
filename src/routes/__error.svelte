@@ -11,7 +11,7 @@
 	let isInView
 </script>
 
-<Head description={description} location={location} url={url} image={image}/>
+<Head {description} {location} {url} {image} />
 
 <Transition bind:isInView>
 	<section class="error">
@@ -21,7 +21,7 @@
 			<h3 class="error_main_subtitle">Looks like you're lost.</h3>
 			<Button primary href="/" title="Go to Home">Take me Home</Button>
 		</div>
-		<div class="error_art transition" class:animate={isInView}></div>
+		<div class="error_art transition" class:animate={isInView} />
 	</section>
 </Transition>
 
@@ -99,7 +99,8 @@
 		@extend .transition;
 		transform: translateY(-50px);
 	}
-	.transition.animate, .transitionR.animate {
+	.transition.animate,
+	.transitionR.animate {
 		opacity: 1;
 		transform: translateY(0);
 	}

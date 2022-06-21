@@ -5,7 +5,7 @@
 
 	export let slide = false
 
-	const toggleNav = () => slide = !slide
+	const toggleNav = () => (slide = !slide)
 	let loaded = false
 
 	onMount(() => {
@@ -15,14 +15,41 @@
 
 {#if loaded}
 	<nav class="nav" class:slide>
-		<a class="nav_item" on:click={toggleNav} class:active={$page.path === '/'} href="/">home</a>
-		<a class="nav_item" on:click={toggleNav} class:active={$page.path === '/projects' || $page.path === '/project/furnideco'} href="/projects">projects</a>
-		<a class="nav_item" on:click={toggleNav} class:active={$page.path === '/gallery'} href="/gallery">gallery</a>
-		<a class="nav_item" on:click={toggleNav} class:active={$page.path === '/about'} href="/about">about</a>
+		<a
+			class="nav_item"
+			on:click={toggleNav}
+			class:active={$page.url.pathname === '/'}
+			href="/">home</a
+		>
+		<a
+			class="nav_item"
+			on:click={toggleNav}
+			class:active={$page.url.pathname === '/projects' ||
+				$page.url.pathname === '/project/furnideco'}
+			href="/projects">projects</a
+		>
+		<a
+			class="nav_item"
+			on:click={toggleNav}
+			class:active={$page.url.pathname === '/gallery'}
+			href="/gallery">gallery</a
+		>
+		<a
+			class="nav_item"
+			on:click={toggleNav}
+			class:active={$page.url.pathname === '/about'}
+			href="/about">about</a
+		>
 		<div class="nav_links">
-			<a href="https://github.com/arexon" title="GitHub"><Icon type="githubIcon"/></a>
-			<a href="https://twitter.com/thearexon" title="Twitter"><Icon type="twitterIcon"/></a>
-			<a href="https://sketchfab.com/arexon" title="Sketchfab"><Icon type="sketchfabIcon"/></a>
+			<a href="https://github.com/arexon" title="GitHub"
+				><Icon type="githubIcon" /></a
+			>
+			<a href="https://twitter.com/thearexon" title="Twitter"
+				><Icon type="twitterIcon" /></a
+			>
+			<a href="https://sketchfab.com/arexon" title="Sketchfab"
+				><Icon type="sketchfabIcon" /></a
+			>
 		</div>
 	</nav>
 {/if}
@@ -40,18 +67,20 @@
 		gap: $space-1;
 		padding: $space-2 0;
 		background: $color-neutral-1;
-		transition: transform .5s $curve-quart;
+		transition: transform 0.5s $curve-quart;
 		transform: translateX(-200px);
 		&.slide {
 			transform: translateX(0);
-			.nav_item, .nav_links {
+			.nav_item,
+			.nav_links {
 				opacity: 1;
 				transform: translateY(0);
 			}
 		}
-		.nav_item, .nav_links {
+		.nav_item,
+		.nav_links {
 			opacity: 0;
-			transition: transform .75s $curve-quart, opacity 1s $curve-circ;
+			transition: transform 0.75s $curve-quart, opacity 1s $curve-circ;
 			transform: translateY(-$space-3);
 		}
 

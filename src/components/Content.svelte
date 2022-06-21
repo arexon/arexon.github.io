@@ -7,7 +7,7 @@
 </script>
 
 <article class="content" on:click={closeNav} class:slide>
-	<slot/>
+	<slot />
 </article>
 
 <style lang="scss">
@@ -17,7 +17,7 @@
 		gap: $space-4;
 		overflow-y: scroll;
 		background: $color-neutral-0;
-		transition: transform .5s $curve-quart, filter .5s $curve-circ;
+		transition: transform 0.5s $curve-quart, filter 0.5s $curve-circ;
 		&.slide {
 			filter: brightness(0.2);
 			transform: translateX(200px);

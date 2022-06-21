@@ -19,20 +19,31 @@
 	let lightboxVisibility
 </script>
 
-<Head description={description} location={location} url={url} keywords={keywords} image={image}/>
+<Head {description} {location} {url} {keywords} {image} />
 
-<Banner title={title} description={description} location={location}/>
+<Banner {title} {description} {location} />
 
 <Transition bind:isInView>
 	<article class="gallery transition" class:animate={isInView}>
 		{#each gallery as image}
-			<img on:click={() => {lightbox = image; lightboxVisibility = true}} src={image.url} alt={image.name}/>
+			<img
+				on:click={() => {
+					lightbox = image
+					lightboxVisibility = true
+				}}
+				src={image.url}
+				alt={image.name}
+			/>
 		{/each}
 	</article>
 </Transition>
-<Lightbox src={lightbox.url} alt={lightbox.name} bind:visibility={lightboxVisibility}/>
+<Lightbox
+	src={lightbox.url}
+	alt={lightbox.name}
+	bind:visibility={lightboxVisibility}
+/>
 
-<Footer/>
+<Footer />
 
 <style lang="scss">
 	.gallery {

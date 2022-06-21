@@ -15,22 +15,30 @@
 	let isInView
 </script>
 
-<Head title={title} description={description} location={location} url={url} keywords={keywords} image={image}/>
+<Head {title} {description} {location} {url} {keywords} {image} />
 
-<Banner title={title} description={description} location={location}/>
+<Banner {title} {description} {location} />
 
 <Transition bind:isInView>
 	<article class="projects transition" class:animate={isInView}>
 		{#each projects as project}
-			<a class="projectCard" href={project.link} title="Go to {project.name}">
+			<a
+				class="projectCard"
+				href={project.link}
+				title="Go to {project.name}"
+			>
 				<header class="projectCard_header">{project.name}</header>
-				<img class="projectCard_icon" src={project.icon} alt="Thumbnail of {project.name}"/>
+				<img
+					class="projectCard_icon"
+					src={project.icon}
+					alt="Thumbnail of {project.name}"
+				/>
 			</a>
 		{/each}
 	</article>
 </Transition>
 
-<Footer/>
+<Footer />
 
 <style lang="scss">
 	.projects {
@@ -55,8 +63,9 @@
 		display: grid;
 		grid-template: 48px auto 48px / 48px auto 48px;
 		text-decoration: none !important;
-		transition: transform .25s $curve-circ;
-		&:hover, &:focus {
+		transition: transform 0.25s $curve-circ;
+		&:hover,
+		&:focus {
 			transform: translateY(-$space-1);
 		}
 

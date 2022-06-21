@@ -29,6 +29,6 @@ if (isBrowser) {
 }
 
 export const url = {
-	subscribe: derived(href, $href => new URL($href)).subscribe,
-	ssrSet: (urlHref) => href.set(urlHref),
+	subscribe: derived(href, ($href) => new URL($href)).subscribe,
+	ssrSet: (urlHref) => href.set(urlHref)
 }

@@ -1,7 +1,8 @@
 const projects = [
 	{
 		name: 'FurniDeco',
-		description: 'Adds 25 pieces of functional, decorative and unique furniture that fit with the Minecraft vanilla style.',
+		description:
+			'Adds 25 pieces of functional, decorative and unique furniture that fit with the Minecraft vanilla style.',
 		image: '/pages/furnideco/thumbnail.png',
 		icon: '/pages/furnideco/icon.png',
 		link: '/project/furnideco',

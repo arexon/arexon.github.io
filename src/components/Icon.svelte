@@ -3,13 +3,13 @@
 </script>
 
 {#if 'githubIcon' === type}
-	<svg class="icon"><use href="#githubIcon"/></svg>
+	<svg class="icon"><use href="#githubIcon" /></svg>
 {/if}
 {#if 'twitterIcon' === type}
-	<svg class="icon"><use href="#twitterIcon"/></svg>
+	<svg class="icon"><use href="#twitterIcon" /></svg>
 {/if}
 {#if 'sketchfabIcon' === type}
-	<svg class="icon"><use href="#sketchfabIcon"/></svg>
+	<svg class="icon"><use href="#sketchfabIcon" /></svg>
 {/if}
 
 <style lang="scss">

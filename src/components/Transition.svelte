@@ -5,7 +5,7 @@
 	// let scrollDirection
 	const options = {
 		rootMargin: '-50px',
-		unobserveOnEnter: true,
+		unobserveOnEnter: true
 	}
 	const handleChange = ({ detail }) => {
 		isInView = detail.inView
@@ -14,5 +14,5 @@
 </script>
 
 <div use:inview={options} on:change={handleChange}>
-	<slot/>
+	<slot />
 </div>

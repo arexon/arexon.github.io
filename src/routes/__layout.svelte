@@ -1,20 +1,20 @@
 <script>
-    import Nav from '$components/Nav.svelte'
-    import Header from '$components/Header.svelte'
-    import Content from '$components/Content.svelte'
-    import Spritesheet from '$components/Spritesheet.svelte'
-    import "../app.scss"
+	import Nav from '$components/Nav.svelte'
+	import Header from '$components/Header.svelte'
+	import Content from '$components/Content.svelte'
+	import Spritesheet from '$components/Spritesheet.svelte'
+	import '../app.scss'
 
-    let slide = false
+	let slide = false
 </script>
 
 <main class="root">
-	<Nav bind:slide/>
-	<Header bind:slide/>
+	<Nav bind:slide />
+	<Header bind:slide />
 	<Content bind:slide>
-		<slot/>
+		<slot />
 	</Content>
-	<Spritesheet/>
+	<Spritesheet />
 </main>
 
 <style lang="scss">

@@ -12,11 +12,7 @@
 		if (visibility) visibility = false
 	}}
 >
-	<img
-	class="lightbox_image"
-	src={src}
-	alt={alt}
-	>
+	<img class="lightbox_image" {src} {alt} />
 </div>
 
 <style lang="scss">
@@ -27,7 +23,7 @@
 		place-items: center;
 		padding: 0 $space-1;
 		background: #160d0eee;
-		transition: opacity .4s $curve-quart, visibility .4s;
+		transition: opacity 0.4s $curve-quart, visibility 0.4s;
 		opacity: 0;
 		visibility: hidden;
 

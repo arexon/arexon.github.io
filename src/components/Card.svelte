@@ -1,8 +1,7 @@
 <div class="card">
-	<div class="card_backdrop">
-	</div>
+	<div class="card_backdrop" />
 	<div class="card_body">
-		<slot/>
+		<slot />
 	</div>
 </div>
 

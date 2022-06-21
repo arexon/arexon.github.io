@@ -3,12 +3,17 @@
 
 	export let tabs = []
 
-	const toSnakeCase = tab => tab.toLowerCase().split(' ').join('_')
+	const toSnakeCase = (tab) => tab.toLowerCase().split(' ').join('_')
 </script>
 
 <div class="tabs">
 	{#each tabs as tab, i}
-		<a class="tabs_item" class:active={$url.hash === `#${toSnakeCase(tab)}` || i === 0 && $url.hash === ''} href={`#${toSnakeCase(tab)}`}>{tab}</a>
+		<a
+			class="tabs_item"
+			class:active={$url.hash === `#${toSnakeCase(tab)}` ||
+				(i === 0 && $url.hash === '')}
+			href={`#${toSnakeCase(tab)}`}>{tab}</a
+		>
 	{/each}
 </div>
 

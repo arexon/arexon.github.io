@@ -115,7 +115,8 @@
 		@extend .transition;
 		transform: translateY(-50px);
 	}
-	.transition.animate, .transitionR.animate {
+	.transition.animate,
+	.transitionR.animate {
 		opacity: 1;
 		transform: translateY(0);
 	}
